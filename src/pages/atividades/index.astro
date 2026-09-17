@@ -1,0 +1,23 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import ActivityExplorer from "../components/react/ActivityExplorer";
+---
+
+<SiteLayout
+  title="Atividades"
+  description="Oficinas, programas, campanhas e espaços do Caminho do Bem em Canoas e Bagé."
+>
+  <section class="mx-auto max-w-6xl px-4 py-14">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Atividades</p>
+    <h1 class="mt-2 max-w-3xl font-display text-5xl text-cdb-purple-deep">
+      Uma página para cada trabalho.
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-cdb-muted">
+      Oficina, programa, campanha ou espaço: se tem nome e Cidade, tem página. No fim de cada uma, o atalho
+      para a Memória correspondente.
+    </p>
+    <div class="mt-10">
+      <ActivityExplorer client:load />
+    </div>
+  </section>
+</SiteLayout>

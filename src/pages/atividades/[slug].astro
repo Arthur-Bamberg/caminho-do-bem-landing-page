@@ -1,0 +1,101 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { activities, activityBySlug, cityName, kindLabel } from "../../data/site";
+
+export function getStaticPaths() {
+  return activities.map((activity) => ({
+    params: { slug: activity.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const activity = activityBySlug(slug!);
+if (!activity) {
+  return Astro.redirect("/atividades/");
+}
+const city = cityName(activity.city);
+---
+
+<SiteLayout title={activity.title} description={activity.summary}>
+  <article class="mx-auto max-w-3xl px-4 py-14">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">
+      {kindLabel[activity.kind]} · {city}
+    </p>
+    <h1 class="mt-2 font-display text-5xl text-cdb-purple-deep">{activity.title}</h1>
+    <p class="mt-4 text-lg leading-relaxed text-cdb-muted">{activity.summary}</p>
+
+    <dl class="mt-8 grid gap-4 rounded-3xl bg-cdb-paper p-6 sm:grid-cols-2">
+      <div>
+        <dt class="text-xs font-bold uppercase tracking-wide text-cdb-purple">Público</dt>
+        <dd class="mt-1 text-sm text-cdb-ink">{activity.audience}</dd>
+      </div>
+      {
+        activity.schedule ? (
+          <div>
+            <dt class="text-xs font-bold uppercase tracking-wide text-cdb-purple">Quando</dt>
+            <dd class="mt-1 text-sm text-cdb-ink">{activity.schedule}</dd>
+          </div>
+        ) : null
+      }
+      {
+        activity.partner ? (
+          <div class="sm:col-span-2">
+            <dt class="text-xs font-bold uppercase tracking-wide text-cdb-purple">Parceria</dt>
+            <dd class="mt-1 text-sm text-cdb-ink">{activity.partner}</dd>
+          </div>
+        ) : null
+      }
+    </dl>
+
+    <div class="mt-10 space-y-4 text-base leading-relaxed text-cdb-ink">
+      {activity.body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <h2 class="mt-12 font-display text-3xl text-cdb-purple-deep">O que fica desta Atividade</h2>
+    <ul class="mt-4 grid gap-3">
+      {
+        activity.highlights.map((item) => (
+          <li class="rounded-2xl border border-cdb-purple-soft bg-white px-4 py-3 text-sm font-semibold text-cdb-ink">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="mt-12 font-display text-3xl text-cdb-purple-deep">Álbum</h2>
+    <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+      {
+        activity.gallery.map((shot) => (
+          <li class="overflow-hidden rounded-3xl border border-cdb-purple-soft bg-white p-3">
+            <div class:list={["aspect-[4/3] rounded-2xl", shot.tone === "yellow" ? "bg-cdb-yellow" : "bg-cdb-purple"]}></div>
+            <p class="mt-3 font-display text-xl text-cdb-purple-deep">{shot.title}</p>
+            <p class="text-sm text-cdb-muted">{shot.caption}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <aside class="mt-12 rounded-3xl bg-cdb-purple p-6 text-white">
+      <p class="text-sm font-bold uppercase tracking-wide text-cdb-yellow">Memória</p>
+      <p class="mt-2 font-display text-3xl">Esta Atividade vive embaixo de {city}.</p>
+      <p class="mt-3 text-sm text-white/80">
+        O registro completo — contexto, Território e encadeamento com as outras Oficinas — está na Memória
+        Starlight da Cidade.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a
+          href={`/${activity.city}/${activity.slug}/`}
+          class="inline-flex min-h-11 items-center rounded-full bg-cdb-yellow px-5 font-bold text-cdb-purple-deep"
+        >
+          Abrir Memória
+        </a>
+        <a
+          href={`/cidades/${activity.city}/`}
+          class="inline-flex min-h-11 items-center rounded-full border border-white px-5 font-bold"
+        >
+          Ver {city}
+        </a>
+      </div>
+    </aside>
+  </article>
+</SiteLayout>

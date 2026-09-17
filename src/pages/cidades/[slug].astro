@@ -1,0 +1,60 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import {
+  activitiesByCity,
+  cities,
+  cityBySlug,
+  kindLabel,
+} from "../../data/site";
+
+export function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { slug: city.slug },
+  }));
+}
+
+const city = cityBySlug(Astro.params.slug!);
+if (!city) {
+  return Astro.redirect("/cidades/");
+}
+const list = activitiesByCity(city.slug);
+---
+
+<SiteLayout title={city.name} description={city.summary}>
+  <article class="mx-auto max-w-3xl px-4 py-14">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Cidade · desde {city.since}</p>
+    <h1 class="mt-2 font-display text-5xl text-cdb-purple-deep">{city.name}/{city.state}</h1>
+    <p class="mt-4 text-lg text-cdb-muted">{city.summary}</p>
+    <p class="mt-6 leading-relaxed text-cdb-ink">{city.story}</p>
+    <p class="mt-6 text-sm font-semibold text-cdb-purple">
+      Territórios: {city.territories.join(", ")}
+    </p>
+
+    <h2 class="mt-12 font-display text-3xl text-cdb-purple-deep">Atividades exercidas aqui</h2>
+    <ul class="mt-5 grid gap-3">
+      {
+        list.map((activity) => (
+          <li>
+            <a
+              href={`/atividades/${activity.slug}/`}
+              class="flex min-h-14 items-center justify-between gap-4 rounded-2xl border border-cdb-purple-soft bg-white px-4 py-3 hover:border-cdb-purple"
+            >
+              <span>
+                <span class="block text-xs font-bold uppercase text-cdb-purple">{kindLabel[activity.kind]}</span>
+                <span class="font-display text-xl text-cdb-purple-deep">{activity.title}</span>
+              </span>
+              <span class="text-sm font-bold text-cdb-purple">Página</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href={`/${city.slug}/`}
+      class="mt-10 inline-flex min-h-11 items-center rounded-full bg-cdb-yellow px-6 font-bold text-cdb-purple-deep"
+    >
+      Abrir Memória de {city.name}
+    </a>
+  </article>
+</SiteLayout>

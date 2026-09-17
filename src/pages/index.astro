@@ -1,0 +1,211 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import ActivityExplorer from "../components/react/ActivityExplorer";
+import { activities, brand, cities, partners } from "../data/site";
+
+const featured = activities.filter((item) =>
+  ["espaco-da-gurizada", "nacao-jovem", "nacao-cultura", "acessuas-trabalho"].includes(item.slug),
+);
+---
+
+<SiteLayout
+  title="Oficinas que abrem caminho"
+  description="Projeto Social Caminho do Bem: Oficinas, convivência, cultura, esporte e cidadania em Canoas e Bagé."
+>
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <svg class="absolute -right-20 top-0 h-[28rem] w-[28rem] opacity-90" viewBox="0 0 400 400">
+        <circle cx="260" cy="80" r="70" fill="#F5C518" />
+        <path d="M20 320c70-20 90-120 170-120s90 100 170 90" fill="none" stroke="#5B2D91" stroke-width="18" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="mx-auto grid max-w-6xl items-end gap-10 px-4 pb-16 pt-12 md:grid-cols-[1.2fr_0.8fr] md:pt-20">
+      <div>
+        <p class="inline-flex min-h-11 items-center rounded-full bg-cdb-yellow-soft px-4 text-sm font-bold text-cdb-purple-deep">
+          OSC desde {brand.foundedYear} · Canoas e Bagé
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-4xl leading-[1.1] text-cdb-purple-deep sm:text-6xl">
+          Cada oficina abre um caminho.
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cdb-muted">
+          O Projeto Social Caminho do Bem oferece aprendizagem, convivência, cultura, esporte e inclusão para
+          crianças, adolescentes, jovens, Famílias, imigrantes e mulheres chefes de família.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/atividades/"
+            class="inline-flex min-h-11 items-center rounded-full bg-cdb-purple px-6 font-bold text-white"
+          >
+            Ver atividades
+          </a>
+          <a
+            href="/memoria/"
+            class="inline-flex min-h-11 items-center rounded-full border-2 border-cdb-purple px-6 font-bold text-cdb-purple"
+          >
+            Abrir a Memória
+          </a>
+        </div>
+      </div>
+      <aside class="rounded-[2rem] border border-cdb-purple-soft bg-white p-6 shadow-[0_20px_50px_rgba(91,45,145,0.08)]">
+        <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Sede</p>
+        <p class="mt-2 font-display text-3xl text-cdb-purple-deep">Guajuviras, Canoas</p>
+        <p class="mt-3 text-sm leading-relaxed text-cdb-muted">
+          {brand.address.street}<br />
+          {brand.address.extra}
+        </p>
+        <p class="mt-4 text-sm font-semibold text-cdb-ink">
+          Segunda a sexta, a Sede recebe Oficinas, o Espaço da Gurizada e o acolhimento de Famílias.
+        </p>
+        <a
+          href={`https://wa.me/${brand.phoneWhatsapp}`}
+          class="mt-6 inline-flex min-h-11 items-center rounded-full bg-cdb-yellow px-5 font-bold text-cdb-purple-deep"
+        >
+          Chamar no WhatsApp
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-y border-cdb-purple-soft bg-cdb-paper py-6" aria-label="Números da caminhada">
+    <div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 md:grid-cols-4">
+      <div>
+        <p class="font-display text-4xl text-cdb-purple">{brand.foundedYear}</p>
+        <p class="text-sm text-cdb-muted">ano em que a caminhada começou, em Bagé</p>
+      </div>
+      <div>
+        <p class="font-display text-4xl text-cdb-purple">2</p>
+        <p class="text-sm text-cdb-muted">Cidades: Bagé e Canoas</p>
+      </div>
+      <div>
+        <p class="font-display text-4xl text-cdb-purple">{activities.length}</p>
+        <p class="text-sm text-cdb-muted">Atividades com página e Memória próprias</p>
+      </div>
+      <div>
+        <p class="font-display text-4xl text-cdb-purple">30</p>
+        <p class="text-sm text-cdb-muted">vagas no Espaço da Gurizada, de 5 a 17 anos</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Quem somos</p>
+      <h2 class="mt-2 font-display text-4xl text-cdb-purple-deep">Uma OSC de vizinhança, palco e direitos.</h2>
+      <p class="mt-4 text-lg leading-relaxed text-cdb-muted">
+        Há mais de uma década o Caminho do Bem trabalha para que Participantes se tornem cidadãos de bem pela
+        transformação da família, do trabalho e da inclusão social. A origem é Bagé. A Sede de hoje é Canoas,
+        nos Territórios de Guajuviras e Fátima.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {
+        cities.map((city) => (
+          <a
+            href={`/cidades/${city.slug}/`}
+            class="rounded-3xl border border-cdb-purple-soft bg-white p-6 transition hover:border-cdb-purple"
+          >
+            <p class="text-xs font-bold uppercase tracking-wide text-cdb-purple">Desde {city.since}</p>
+            <h3 class="mt-2 font-display text-3xl text-cdb-purple-deep">
+              {city.name}/{city.state}
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-cdb-muted">{city.summary}</p>
+            <p class="mt-4 text-sm font-bold text-cdb-purple">Ver a Cidade →</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bg-cdb-paper py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Oficinas em destaque</p>
+          <h2 class="mt-2 font-display text-4xl text-cdb-purple-deep">O cotidiano da Sede.</h2>
+        </div>
+        <a href="/atividades/" class="font-bold text-cdb-purple underline-offset-4 hover:underline">Todas as Atividades</a>
+      </div>
+      <ul class="mt-8 grid gap-5 md:grid-cols-2">
+        {
+          featured.map((activity) => (
+            <li>
+              <a
+                href={`/atividades/${activity.slug}/`}
+                class="flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-cdb-purple-soft transition hover:ring-cdb-purple"
+              >
+                <p class="text-xs font-bold uppercase text-cdb-purple">{activity.city === "canoas" ? "Canoas" : "Bagé"}</p>
+                <h3 class="mt-2 font-display text-3xl text-cdb-purple-deep">{activity.title}</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-cdb-muted">{activity.summary}</p>
+                <span class="mt-4 font-bold text-cdb-purple">Abrir página →</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Portfólio</p>
+    <h2 class="mt-2 font-display text-4xl text-cdb-purple-deep">Fotos e oficinas, em álbum.</h2>
+    <p class="mt-3 max-w-2xl text-cdb-muted">
+      Cada quadro abaixo corresponde a um registro público da OSC. As fotografias originais da apresentação
+      entram neste álbum quando o arquivo for anexado ao projeto.
+    </p>
+    <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        activities.flatMap((activity) =>
+          activity.gallery.map((shot) => (
+            <li class="overflow-hidden rounded-[1.6rem] border border-cdb-purple-soft bg-white p-3">
+              <div class:list={["aspect-[4/3] rounded-[1.1rem]", shot.tone === "yellow" ? "bg-cdb-yellow" : "bg-cdb-purple"]}>
+                <svg viewBox="0 0 300 220" class="h-full w-full" aria-hidden="true">
+                  <circle cx="230" cy="48" r="26" fill={shot.tone === "yellow" ? "#5B2D91" : "#F5C518"} />
+                  <path
+                    d="M18 170c36-8 48-52 90-52s48 42 90 42 70-34 80-34"
+                    fill="none"
+                    stroke={shot.tone === "yellow" ? "#5B2D91" : "#FFFFFF"}
+                    stroke-width="10"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <p class="px-2 pt-3 font-display text-xl text-cdb-purple-deep">{shot.title}</p>
+              <p class="px-2 pb-2 text-sm text-cdb-muted">{shot.caption}</p>
+              <a href={`/atividades/${activity.slug}/`} class="px-2 pb-2 text-sm font-bold text-cdb-purple">
+                {activity.title}
+              </a>
+            </li>
+          )),
+        )
+      }
+    </ul>
+  </section>
+
+  <section class="bg-cdb-purple py-16 text-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="font-display text-4xl">Quem caminha junto.</h2>
+      <p class="mt-3 max-w-2xl text-white/80">
+        Parcerias públicas e da sociedade civil sustentam as Atividades. Nenhuma delas substitui o Caminho do
+        Bem no Território.
+      </p>
+      <ul class="mt-8 flex flex-wrap gap-3">
+        {
+          partners.map((partner) => (
+            <li class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-cdb-yellow">{partner}</li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="font-display text-4xl text-cdb-purple-deep">Todas as Atividades</h2>
+    <p class="mt-3 max-w-2xl text-cdb-muted">
+      Filtre por Cidade ou por tipo. Cada card abre a página da Atividade; no rodapé dela está o registro da
+      Memória, embaixo da Cidade em que é exercida.
+    </p>
+    <div class="mt-8">
+      <ActivityExplorer client:load />
+    </div>
+  </section>
+</SiteLayout>

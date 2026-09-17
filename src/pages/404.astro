@@ -1,0 +1,27 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Página não encontrada"
+  description="Este endereço não existe no site do Caminho do Bem."
+>
+  <section class="mx-auto max-w-3xl px-4 py-20 text-center">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Erro 404</p>
+    <h1 class="mt-2 font-display text-5xl text-cdb-purple-deep">Esse caminho ainda não existe.</h1>
+    <p class="mt-4 text-lg text-cdb-muted">
+      A página pode ter mudado de lugar. Volte à inicial ou escolha uma Atividade.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/" class="inline-flex min-h-11 items-center rounded-full bg-cdb-purple px-6 font-bold text-white">
+        Página inicial
+      </a>
+      <a
+        href="/atividades/"
+        class="inline-flex min-h-11 items-center rounded-full bg-cdb-yellow px-6 font-bold text-cdb-purple-deep"
+      >
+        Ver Atividades
+      </a>
+    </div>
+  </section>
+</SiteLayout>

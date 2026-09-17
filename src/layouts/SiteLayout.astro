@@ -1,0 +1,87 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/react/SiteHeader";
+import { brand } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {brand.name}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-cdb-white font-sans text-cdb-ink antialiased">
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-cdb-yellow focus:px-4 focus:py-2 focus:font-bold"
+    >
+      Ir para o conteúdo
+    </a>
+    <SiteHeader client:load currentPath={path} />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <footer class="border-t border-cdb-purple-soft bg-cdb-paper">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
+        <div>
+          <p class="font-display text-2xl text-cdb-purple-deep">{brand.name}</p>
+          <p class="mt-2 max-w-sm text-sm leading-relaxed text-cdb-muted">
+            OSC fundada em {brand.foundedYear}. Oficinas, convivência e acesso a direitos em Bagé e Canoas.
+          </p>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Sede</p>
+          <p class="mt-2 text-sm leading-relaxed text-cdb-ink">
+            {brand.address.street}<br />
+            {brand.address.extra}<br />
+            {brand.address.city}/{brand.address.state} · CEP {brand.address.cep}
+          </p>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Fale com a gente</p>
+          <ul class="mt-2 space-y-2 text-sm">
+            {
+              brand.phoneDisplay.map((phone) => (
+                <li>
+                  <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href={`tel:+55${phone.replace(/\D/g, "")}`}>
+                    {phone}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href={brand.instagram}>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href="/memoria/">
+                Memória das atividades
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="border-t border-cdb-purple-soft px-4 py-4 text-center text-xs text-cdb-muted">
+        Projeto Social Caminho do Bem · Canoas e Bagé · Rio Grande do Sul
+      </p>
+    </footer>
+  </body>
+</html>

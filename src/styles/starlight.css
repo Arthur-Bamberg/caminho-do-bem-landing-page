@@ -1,0 +1,49 @@
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #fbf8ff;
+  --sl-color-bg-accent: #ede4f8;
+  --sl-color-hairline: #ede4f8;
+  --sl-color-hairline-light: #ede4f8;
+  --sl-color-accent-low: #ede4f8;
+  --sl-color-accent: #5b2d91;
+  --sl-color-accent-high: #3d1a6b;
+  --sl-color-text: #1c1230;
+  --sl-color-text-accent: #5b2d91;
+  --sl-color-gray-1: #1c1230;
+  --sl-color-gray-2: #3d1a6b;
+  --sl-color-gray-3: #5c5470;
+  --sl-color-gray-4: #b9adc8;
+  --sl-color-gray-5: #ede4f8;
+  --sl-color-gray-6: #fbf8ff;
+  --sl-color-gray-7: #ffffff;
+  --sl-color-black: #ffffff;
+  --sl-color-white: #1c1230;
+  --sl-font: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --sl-font-heading: "Fraunces", "Times New Roman", serif;
+}
+
+.site-banner {
+  background: #5b2d91;
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.55rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-banner a {
+  color: #f5c518;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-banner a:hover,
+.site-banner a:focus-visible {
+  text-decoration: underline;
+}

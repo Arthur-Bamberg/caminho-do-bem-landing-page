@@ -1,0 +1,49 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { activitiesByCity, cities } from "../data/site";
+---
+
+<SiteLayout
+  title="Cidades"
+  description="Bagé e Canoas: as Cidades em que o Caminho do Bem exerce suas Atividades."
+>
+  <section class="mx-auto max-w-6xl px-4 py-14">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Cidades</p>
+    <h1 class="mt-2 font-display text-5xl text-cdb-purple-deep">Onde o trabalho acontece.</h1>
+    <p class="mt-4 max-w-2xl text-lg text-cdb-muted">
+      A Memória de cada Atividade fica embaixo da Cidade em que ela é exercida. Comece por aqui.
+    </p>
+    <ul class="mt-10 grid gap-6 md:grid-cols-2">
+      {
+        cities.map((city) => {
+          const count = activitiesByCity(city.slug).length;
+          return (
+            <li class="rounded-[2rem] border border-cdb-purple-soft bg-cdb-paper p-8">
+              <p class="text-xs font-bold uppercase text-cdb-purple">Desde {city.since}</p>
+              <h2 class="mt-2 font-display text-4xl text-cdb-purple-deep">
+                {city.name}/{city.state}
+              </h2>
+              <p class="mt-3 text-sm text-cdb-muted">{city.territories.join(" · ")}</p>
+              <p class="mt-4 leading-relaxed text-cdb-ink">{city.summary}</p>
+              <p class="mt-4 text-sm font-bold text-cdb-purple">{count} Atividades na Memória</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={`/cidades/${city.slug}/`}
+                  class="inline-flex min-h-11 items-center rounded-full bg-cdb-purple px-5 font-bold text-white"
+                >
+                  Abrir {city.name}
+                </a>
+                <a
+                  href={`/${city.slug}/`}
+                  class="inline-flex min-h-11 items-center rounded-full border-2 border-cdb-purple px-5 font-bold text-cdb-purple"
+                >
+                  Memória de {city.name}
+                </a>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</SiteLayout>

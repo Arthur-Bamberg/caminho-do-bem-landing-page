@@ -1,0 +1,57 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { brand } from "../data/site";
+---
+
+<SiteLayout
+  title="Participar"
+  description="Doe, seja voluntário ou traga uma criança, jovem ou Família para as Oficinas."
+>
+  <section class="mx-auto max-w-3xl px-4 py-14">
+    <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Participar</p>
+    <h1 class="mt-2 font-display text-5xl text-cdb-purple-deep">O caminho se faz com mais gente.</h1>
+    <p class="mt-4 text-lg text-cdb-muted">
+      Voluntariado, doação de brinquedos e material escolar, inscrição em Oficina ou parceria institucional —
+      a Sede no Guajuviras recebe os três.
+    </p>
+
+    <ol class="mt-10 grid gap-4">
+      <li class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+        <p class="font-display text-2xl text-cdb-purple-deep">1. Ir à Sede</p>
+        <p class="mt-2 text-sm leading-relaxed text-cdb-muted">
+          {brand.address.street}, {brand.address.extra}, {brand.address.city}/{brand.address.state}.
+          O Espaço da Gurizada funciona de segunda a sexta, das 14h às 17h.
+        </p>
+      </li>
+      <li class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+        <p class="font-display text-2xl text-cdb-purple-deep">2. Ligar ou escrever</p>
+        <p class="mt-2 text-sm leading-relaxed text-cdb-muted">
+          {brand.phoneDisplay.join(" · ")}. WhatsApp e telefone são o caminho mais rápido para pré-inscrição
+          no ACESSUAS Trabalho e no Espaço da Gurizada.
+        </p>
+      </li>
+      <li class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+        <p class="font-display text-2xl text-cdb-purple-deep">3. Doar o que a infância precisa</p>
+        <p class="mt-2 text-sm leading-relaxed text-cdb-muted">
+          Brinquedos e kits escolares podem ser levados até a Sede. Campanhas de Natal e Volta às Aulas
+          acontecem no mesmo endereço.
+        </p>
+      </li>
+    </ol>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href={`https://wa.me/${brand.phoneWhatsapp}`}
+        class="inline-flex min-h-11 items-center rounded-full bg-cdb-purple px-6 font-bold text-white"
+      >
+        WhatsApp
+      </a>
+      <a
+        href="/contato/"
+        class="inline-flex min-h-11 items-center rounded-full bg-cdb-yellow px-6 font-bold text-cdb-purple-deep"
+      >
+        Escrever pelo site
+      </a>
+    </div>
+  </section>
+</SiteLayout>
