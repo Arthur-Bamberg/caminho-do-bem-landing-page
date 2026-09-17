@@ -77,11 +77,11 @@ export default defineConfig({
         },
         {
           label: 'Canoas',
-          autogenerate: { directory: 'canoas' },
+          items: [{ autogenerate: { directory: 'canoas' } }],
         },
         {
           label: 'Bagé',
-          autogenerate: { directory: 'bage' },
+          items: [{ autogenerate: { directory: 'bage' } }],
         },
       ],
     }),
