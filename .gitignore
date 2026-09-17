@@ -5,6 +5,9 @@ dist/
 
 # dependencies
 node_modules/
+.vite/
+.vite-dev/
+.vite-build/
 
 # logs
 npm-debug.log*
