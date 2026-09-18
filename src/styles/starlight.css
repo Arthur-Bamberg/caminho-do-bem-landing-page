@@ -21,14 +21,14 @@
   --sl-color-gray-7: #ffffff;
   --sl-color-black: #ffffff;
   --sl-color-white: #1c1230;
-  --sl-font: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
-  --sl-font-heading: "Fraunces", "Times New Roman", serif;
+  --sl-font: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --sl-font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 .site-banner {
   background: #5b2d91;
   color: #ffffff;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   padding: 0.55rem 1rem;
   display: flex;
@@ -46,4 +46,11 @@
 .site-banner a:hover,
 .site-banner a:focus-visible {
   text-decoration: underline;
+}
+
+.site-title img,
+.site-title svg {
+  height: 3rem;
+  width: auto;
+  max-width: 14rem;
 }

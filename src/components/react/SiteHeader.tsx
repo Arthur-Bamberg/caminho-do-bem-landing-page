@@ -28,11 +28,8 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
   return (
     <header className="sticky top-0 z-40 border-b border-cdb-purple-soft bg-cdb-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <a href="/" className="flex min-h-11 items-center gap-3" aria-label="Caminho do Bem, página inicial">
-          <img src="/favicon.svg" alt="" width={40} height={40} className="h-10 w-10" />
-          <span className="font-display text-lg font-semibold tracking-tight text-cdb-purple-deep">
-            Caminho do Bem
-          </span>
+        <a href="/" className="flex min-h-11 items-center" aria-label="Caminho do Bem, página inicial">
+          <img src="/logo.svg" alt="" width={210} height={74} className="h-11 w-auto sm:h-12" />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">

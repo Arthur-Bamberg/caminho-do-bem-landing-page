@@ -23,8 +23,9 @@ export default defineConfig({
       logo: {
         src: './src/assets/logo.svg',
         alt: 'Caminho do Bem',
+        replacesTitle: true,
       },
-      favicon: '/favicon.svg',
+      favicon: '/logo.svg',
       social: [
         {
           icon: 'instagram',
@@ -62,7 +63,7 @@ export default defineConfig({
           tag: 'link',
           attrs: {
             rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap',
+            href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
           },
         },
       ],

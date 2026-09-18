@@ -28,9 +28,8 @@ Contraste texto/roxo sobre branco e texto escuro sobre amarelo acima de 4.5:1. N
 
 ## Tipografia
 
-- Display: **Fraunces** (títulos, hero, nomes de Atividade)
-- Corpo: **Nunito Sans** (parágrafos, navegação, formulários)
-- Base 16px, interlinhamento 1.55, títulos com tracking levemente negativo
+- Display e corpo: **Poppins** (títulos, hero, nomes de Atividade, parágrafos, navegação, formulários)
+- Base 16px, interlinhamento 1.55, rótulos em caixa alta com tracking amplo
 
 ## Layout
 
