@@ -1,15 +1,13 @@
 import { useEffect, useId, useState } from "react";
 
 const links = [
-  { href: "/sobre/", label: "Sobre" },
-  { href: "/atividades/", label: "Atividades" },
-  { href: "/cidades/", label: "Cidades" },
-  { href: "/memoria/", label: "Memória" },
-  { href: "/participar/", label: "Participar" },
-  { href: "/contato/", label: "Contato" },
+  { href: "/#quem-somos", label: "Quem somos" },
+  { href: "/#locais", label: "Locais" },
+  { href: "/#jiu-jitsu", label: "Oficinas" },
+  { href: "/#contatos", label: "Contato" },
 ];
 
-export default function SiteHeader({ currentPath = "/" }: { currentPath?: string }) {
+export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
 
@@ -19,11 +17,6 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  const isActive = (href: string) =>
-    href === "/"
-      ? currentPath === "/"
-      : currentPath === href || currentPath.startsWith(href);
 
   return (
     <header className="sticky top-0 z-40 border-b border-cdb-purple-soft bg-cdb-white/95 backdrop-blur">
@@ -37,11 +30,7 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
             <a
               key={link.href}
               href={link.href}
-              className={`inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold ${
-                isActive(link.href)
-                  ? "bg-cdb-purple text-white"
-                  : "text-cdb-ink hover:bg-cdb-purple-soft"
-              }`}
+              className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-cdb-ink hover:bg-cdb-purple-soft"
             >
               {link.label}
             </a>
@@ -49,7 +38,7 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
         </nav>
 
         <a
-          href="/participar/"
+          href="/#contatos"
           className="hidden min-h-11 items-center rounded-full bg-cdb-yellow px-4 text-sm font-bold text-cdb-purple-deep lg:inline-flex"
         >
           Quero ajudar
@@ -84,9 +73,7 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`flex min-h-11 items-center rounded-2xl px-4 font-semibold ${
-                    isActive(link.href) ? "bg-cdb-purple text-white" : "bg-cdb-paper text-cdb-ink"
-                  }`}
+                  className="flex min-h-11 items-center rounded-2xl bg-cdb-paper px-4 font-semibold text-cdb-ink"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
@@ -95,8 +82,9 @@ export default function SiteHeader({ currentPath = "/" }: { currentPath?: string
             ))}
             <li>
               <a
-                href="/participar/"
+                href="/#contatos"
                 className="flex min-h-11 items-center justify-center rounded-2xl bg-cdb-yellow font-bold text-cdb-purple-deep"
+                onClick={() => setOpen(false)}
               >
                 Quero ajudar
               </a>

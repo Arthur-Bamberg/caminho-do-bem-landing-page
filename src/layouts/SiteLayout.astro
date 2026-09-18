@@ -1,7 +1,9 @@
 ---
 import "../styles/global.css";
 import SiteHeader from "../components/react/SiteHeader";
-import { brand } from "../data/site";
+import PhoneWithWhatsApp from "../components/PhoneWithWhatsApp.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import { brand, toWhatsAppHref } from "../data/site";
 
 interface Props {
   title: string;
@@ -9,7 +11,6 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
 ---
 
 <!doctype html>
@@ -34,7 +35,7 @@ const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.ur
     >
       Ir para o conteúdo
     </a>
-    <SiteHeader client:load currentPath={path} />
+    <SiteHeader client:load />
     <main id="conteudo">
       <slot />
     </main>
@@ -62,28 +63,40 @@ const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.ur
             {
               brand.phoneDisplay.map((phone) => (
                 <li>
-                  <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href={`tel:+55${phone.replace(/\D/g, "")}`}>
-                    {phone}
-                  </a>
+                  <PhoneWithWhatsApp
+                    phone={phone}
+                    whatsappHref={toWhatsAppHref(phone)}
+                    whatsappLabel={`WhatsApp ${phone}`}
+                  />
                 </li>
               ))
             }
-            <li>
-              <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href={brand.instagram}>
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a class="font-semibold text-cdb-purple-deep underline-offset-4 hover:underline" href="/memoria/">
-                Memória das atividades
-              </a>
-            </li>
           </ul>
+          <div class="mt-4">
+            <SocialLinks facebookHref={brand.facebook} instagramHref={brand.instagram} />
+          </div>
         </div>
       </div>
-      <p class="border-t border-cdb-purple-soft px-4 py-4 text-center text-xs text-cdb-muted">
-        Projeto Social Caminho do Bem · Canoas e Bagé · Rio Grande do Sul
-      </p>
+      <div class="border-t border-cdb-purple-soft px-4 py-5">
+        <p class="text-center text-xs text-cdb-muted">
+          Projeto Social Caminho do Bem · Canoas e Bagé · Rio Grande do Sul
+        </p>
+        <a
+          class="mx-auto mt-4 flex min-h-11 max-w-xl items-center justify-center gap-3 text-center text-sm font-semibold text-black underline-offset-4 hover:underline"
+          href="https://bambergsoftware.com/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img
+            src="/bamberg.png"
+            alt=""
+            width="64"
+            height="64"
+            class="h-14 w-14 shrink-0 object-contain"
+          />
+          <span>Desenvolvido por Bamberg Desenvolvimento de Software</span>
+        </a>
+      </div>
     </footer>
   </body>
 </html>
