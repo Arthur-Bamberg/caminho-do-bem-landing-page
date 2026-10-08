@@ -5,84 +5,125 @@ import SocialLinks from "../components/SocialLinks.astro";
 import { brand, toWhatsAppHref } from "../data/site";
 
 const sbtReel =
-  "https://www.instagram.com/reel/DTHH6WekR6w/?igsh=MWM5NHNtZHpyNWhncA==";
+  "https://www.instagram.com/reels/DTHH6WekR6w/";
 ---
 
 <SiteLayout
   title="Projeto Social Caminho do Bem"
   description="Organização não governamental. Projeto Social Caminho do Bem, desde 2012, em Canoas e Bagé/RS."
 >
-  <section class="relative overflow-hidden" aria-labelledby="capa-titulo">
-    <div
-      class="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] md:block"
-      aria-hidden="true"
-    >
-      <div class="absolute inset-0 bg-gradient-to-l from-cdb-purple-soft via-cdb-paper to-transparent"></div>
-      <div class="absolute -right-16 top-0 h-full w-[70%] -skew-x-12 bg-gradient-to-br from-[#c084fc] via-cdb-purple to-[#7c3aed]"></div>
-      <div class="absolute -right-28 top-24 h-[70%] w-[55%] -skew-x-12 bg-gradient-to-br from-[#a78bfa]/80 to-cdb-purple-deep"></div>
-    </div>
-    <div class="relative mx-auto max-w-6xl px-4 pb-16 pt-12 md:pt-20">
-      <p class="flex min-h-11 items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-cdb-yellow sm:text-sm">
-        <span class="inline-block h-2.5 w-2.5 rotate-45 bg-cdb-yellow"></span>
-        Organização não governamental
+  <section class="relative overflow-hidden bg-gradient-to-b from-cdb-paper via-cdb-purple-soft/40 to-white" aria-labelledby="capa-titulo">
+    <div class="relative mx-auto grid max-w-[1120px] items-center gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
+      <div>
+      <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-cdb-purple sm:text-sm">
+        <span class="h-2 w-2 shrink-0 rounded-full bg-cdb-yellow" aria-hidden="true"></span>
+        Desde {brand.foundedYear}, junto à comunidade
       </p>
-      <div class="mt-3 h-1 w-48 rounded-full bg-gradient-to-r from-cdb-yellow via-[#f59e0b] to-cdb-purple"></div>
-      <img src="/logo.svg" alt="Caminho do Bem OSC" width="280" height="98" class="mt-10 h-16 w-auto sm:h-20" />
-      <p class="mt-10 text-sm font-semibold uppercase tracking-[0.42em] text-cdb-purple sm:text-base">
+      <p class="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-cdb-purple">
         Projeto Social
       </p>
-      <h1 id="capa-titulo" class="mt-3 max-w-4xl font-display text-4xl uppercase leading-[1.05] text-cdb-purple-deep sm:text-6xl lg:text-7xl">
+      <h1 id="capa-titulo" class="mt-3 max-w-4xl font-display text-4xl font-semibold leading-[1.12] tracking-tight text-cdb-purple-deep sm:text-6xl lg:text-[3.75rem]">
         Caminho do Bem
       </h1>
-      <div class="mt-5 h-1.5 w-72 max-w-full rounded-full bg-gradient-to-r from-cdb-yellow to-cdb-purple"></div>
-      <p class="mt-8 inline-flex min-h-11 items-center rounded-full bg-gradient-to-r from-cdb-purple to-[#7c3aed] px-5 text-sm font-bold uppercase tracking-wide text-white">
-        Desde {brand.foundedYear}
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-cdb-muted sm:text-xl">
+        Um caminho de acolhimento, convivência e oportunidades.
+        Em Bagé e Canoas, fortalecemos vínculos e construímos novas possibilidades com cada pessoa e família.
       </p>
-      <div class="mt-10 flex flex-wrap gap-3">
+      <div class="mt-8 flex flex-wrap gap-3">
         <a
           href="#quem-somos"
-          class="inline-flex min-h-11 items-center rounded-full bg-cdb-purple px-6 font-bold text-white"
+          class="inline-flex min-h-12 items-center justify-center rounded-full bg-cdb-purple px-7 font-semibold text-white transition-colors duration-200 hover:bg-cdb-purple-deep"
         >
-          Quem somos
+          Conheça nossa história
         </a>
         <a
           href="#jiu-jitsu"
-          class="inline-flex min-h-11 items-center rounded-full border-2 border-cdb-purple px-6 font-bold text-cdb-purple"
+          class="inline-flex min-h-12 items-center justify-center rounded-full border border-cdb-purple/30 bg-white/70 px-7 font-semibold text-cdb-purple transition-colors duration-200 hover:bg-cdb-purple-soft"
         >
           Ver atividades
         </a>
       </div>
+      </div>
+      <div class="relative mx-auto h-[320px] w-full max-w-[380px] sm:h-[360px]" aria-hidden="true">
+        <div class="absolute inset-5 rounded-[45%_55%_60%_40%/55%_40%_60%_45%] bg-cdb-purple-soft/70"></div>
+        <div class="absolute left-10 top-7 h-64 w-64 rounded-full border border-cdb-purple/10 sm:h-72 sm:w-72"></div>
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 380 360" fill="none">
+          <path d="M35 280C85 325 115 250 178 238S315 225 331 145C341 91 291 58 252 78" stroke="#5B2D91" stroke-opacity="0.2" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 10" />
+          <circle cx="252" cy="78" r="7" fill="#F5C518" />
+          <circle cx="35" cy="280" r="5" fill="#5B2D91" fill-opacity="0.4" />
+        </svg>
+        <div class="absolute left-1/2 top-1/2 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-white/90 sm:h-48 sm:w-48">
+          <img src="/logo.svg" alt="" width="280" height="98" class="w-36" />
+        </div>
+        <span class="absolute left-0 top-12 -rotate-6 rounded-full border border-cdb-purple-soft bg-white px-5 py-3 text-sm font-semibold text-cdb-purple">Acolhimento</span>
+        <span class="absolute right-0 top-[45%] rotate-6 rounded-full bg-cdb-yellow-soft px-5 py-3 text-sm font-semibold text-cdb-purple-deep">Convivência</span>
+        <span class="absolute bottom-4 left-8 -rotate-3 rounded-full border border-cdb-purple-soft bg-white px-5 py-3 text-sm font-semibold text-cdb-purple">Novas oportunidades</span>
+        <span class="absolute right-8 top-5 h-3 w-3 rounded-full bg-cdb-yellow"></span>
+      </div>
     </div>
   </section>
 
-  <section id="quem-somos" class="overflow-hidden bg-white">
-    <div class="mx-auto grid max-w-6xl items-stretch md:grid-cols-2">
-      <div class="relative min-h-[22rem]">
+  <section id="quem-somos" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="quem-somos-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-8 px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-12">
+      <figure class="mx-auto w-full max-w-[400px] overflow-hidden rounded-3xl">
         <img
           src="/portfolio/quem-somos.jpg"
           alt="Mãos reunidas encaixando peças de quebra-cabeça de madeira"
-          class="absolute inset-0 h-full w-full object-cover"
+          class="aspect-[4/3] w-full object-cover md:aspect-square"
+          loading="lazy"
         />
-        <p
-          class="absolute bottom-6 left-6 inline-flex min-h-11 items-center rounded-full bg-gradient-to-r from-cdb-purple to-[#7c3aed] px-5 text-sm font-bold uppercase tracking-wide text-white"
-        >
-          Fundado em {brand.foundedYear}
-        </p>
-      </div>
-      <div class="flex flex-col justify-center px-4 py-12 md:px-12 md:py-16">
-        <h2 class="inline-flex min-h-11 w-fit items-center rounded-full bg-gradient-to-r from-cdb-purple to-[#7c3aed] px-5 font-display text-2xl uppercase tracking-wide text-white">
-          Quem somos:
+      </figure>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Quem somos</p>
+        <h2 id="quem-somos-titulo" class="mt-3 max-w-lg font-display text-3xl font-semibold leading-tight text-cdb-purple-deep lg:text-4xl">
+          Acolher pessoas.<br />Construir oportunidades.
         </h2>
-        <p class="mt-8 text-lg leading-relaxed text-cdb-ink">
-          Nascemos do compromisso de transformar realidades e ampliar oportunidades para quem mais precisa. O
-          Projeto Social Caminho do Bem é uma organização sem fins lucrativos, com atuação em Canoas e Bagé/RS,
-          que promove cidadania, inclusão social e garantia de direitos.
-        </p>
-        <p class="mt-5 text-lg leading-relaxed text-cdb-ink">
-          Desenvolvemos ações de assistência social, segurança alimentar, cultura, esporte, inclusão produtiva e
-          apoio à população migrante, atendendo crianças, adolescentes, jovens, adultos, idosos e famílias em
-          situação de vulnerabilidade
-        </p>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <div class="mt-6 space-y-4 text-base leading-[1.75] text-cdb-muted">
+          <p>
+            Somos o <strong class="font-semibold text-cdb-ink">Caminho do Bem</strong>, uma organização da
+            sociedade civil sem fins lucrativos. Desde 2012, aproximamos pessoas, fortalecemos vínculos e
+            ampliamos o acesso a direitos.
+          </p>
+          <p>
+            Nossa caminhada começou em {brand.foundedYear}, em Bagé, e seguiu para Canoas, onde fica nossa sede, no Guajuviras.
+            Nessas comunidades, acolhemos pessoas de todas as idades e famílias em situação de vulnerabilidade.
+          </p>
+          <p>
+            Por meio da cultura, do esporte, da assistência social e da formação para o trabalho,
+            criamos espaços de convivência e novas possibilidades. Também oferecemos apoio à população
+            migrante e ações de segurança alimentar, com cuidado e respeito por cada trajetória.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosso-impacto" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="impacto-titulo">
+    <div class="mx-auto max-w-[1120px] px-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Segurança alimentar</p>
+      <h2 id="impacto-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Nosso impacto</h2>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cdb-muted">Mais alimentação, mais oportunidades, mais futuros. Conheça o alcance das nossas ações em um ano de atuação.</p>
+      <dl class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+          <dt class="text-base font-semibold text-cdb-purple-deep">Jantares servidos</dt>
+          <dd class="mt-3 text-5xl font-semibold tracking-tight text-cdb-purple">2.028</dd>
+          <dd class="mt-4 text-sm leading-relaxed text-cdb-muted">39 jovens atendidos semanalmente.</dd>
+        </div>
+        <div class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+          <dt class="text-base font-semibold text-cdb-purple-deep">Cafés da manhã servidos</dt>
+          <dd class="mt-3 text-5xl font-semibold tracking-tight text-cdb-purple">2.080</dd>
+          <dd class="mt-4 text-sm leading-relaxed text-cdb-muted">40 crianças atendidas semanalmente.</dd>
+        </div>
+        <div class="rounded-3xl border border-cdb-purple-soft bg-white p-6">
+          <dt class="text-base font-semibold text-cdb-purple-deep">Cestas básicas distribuídas</dt>
+          <dd class="mt-3 text-5xl font-semibold tracking-tight text-cdb-purple">720</dd>
+          <dd class="mt-4 text-sm leading-relaxed text-cdb-muted">60 famílias beneficiadas mensalmente.</dd>
+        </div>
+      </dl>
+      <div class="mt-5 rounded-2xl bg-cdb-yellow-soft px-6 py-5 sm:flex sm:items-center sm:gap-8">
+        <p class="text-2xl font-semibold text-cdb-purple-deep">Mais de 4.100 refeições servidas</p>
+        <p class="mt-2 text-base leading-relaxed text-cdb-muted sm:mt-0">Ao longo de um ano, alimentando hoje e construindo o amanhã.</p>
       </div>
     </div>
   </section>
@@ -123,77 +164,126 @@ const sbtReel =
     </div>
   </section>
 
-  <section id="jiu-jitsu" class="bg-cdb-paper py-16">
-    <div class="mx-auto grid max-w-6xl items-start gap-10 px-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-      <div>
-        <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Oficinas Guajuviras / Canoas RS</p>
-        <h2 class="mt-2 font-display text-4xl text-cdb-purple-deep">Jiu-jitsu: esporte que transforma</h2>
-        <p class="mt-6 text-lg leading-relaxed text-cdb-ink">
-          Oficinas gratuitas para crianças e adolescentes no Guajuviras, em Canoas/RS, promovendo disciplina,
-          respeito, inclusão social e fortalecimento de vínculos.
-        </p>
-        <p class="mt-6 font-semibold text-cdb-purple-deep">40 vagas disponíveis</p>
-        <p class="mt-1 text-cdb-ink">Patrocínio: Supermercados Viezzer</p>
+  <section id="conheca-oficinas" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="conheca-oficinas-titulo">
+    <div class="mx-auto max-w-[1120px] px-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Um convite para participar</p>
+      <h2 id="conheca-oficinas-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Conheça nosso trabalho</h2>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cdb-muted">Cultura, esporte, convivência e preparação para o mundo do trabalho. Conheça nossas atividades e encontre um caminho para participar.</p>
+      <div class="mt-8 grid gap-8 md:grid-cols-2">
+        <div class="rounded-3xl bg-cdb-paper p-6">
+          <a href="/portfolio/convites/oficinas.jpeg" target="_blank" rel="noreferrer" class="mx-auto block max-w-[280px] overflow-hidden rounded-2xl" aria-label="Ampliar cartaz das oficinas">
+            <img src="/portfolio/convites/oficinas.jpeg" alt="Cartaz das oficinas de teatro, vôlei, jiu-jitsu, judô e NPA." width="1131" height="1600" class="h-auto w-full" loading="lazy" />
+          </a>
+          <h3 class="mt-6 text-xl font-semibold text-cdb-purple-deep">Oficinas e convivência</h3>
+          <p class="mt-3 leading-relaxed text-cdb-muted">Espaços de aprendizado, cultura e esporte para crianças e jovens.</p>
+          <div class="mt-5 flex flex-wrap items-center gap-4">
+            <a href="#jiu-jitsu" class="inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-5 font-semibold text-white hover:bg-cdb-purple-deep">Explorar as oficinas</a>
+            <a href="/portfolio/convites/oficinas.jpeg" target="_blank" rel="noreferrer" class="inline-flex min-h-11 items-center font-semibold text-cdb-purple underline underline-offset-4">Ampliar cartaz<span class="sr-only"> das oficinas</span></a>
+          </div>
+        </div>
+        <div id="acessuas-inscricao" class="scroll-mt-24 rounded-3xl bg-cdb-paper p-6">
+          <a href="/portfolio/convites/acessuas.jpeg" target="_blank" rel="noreferrer" class="mx-auto block max-w-[280px] overflow-hidden rounded-2xl" aria-label="Ampliar cartaz do Acessuas Trabalho">
+            <img src="/portfolio/convites/acessuas.jpeg" alt="Cartaz das oficinas gratuitas do Acessuas Trabalho para jovens, adultos e imigrantes de 14 a 64 anos." width="1131" height="1600" class="h-auto w-full" loading="lazy" />
+          </a>
+          <h3 class="mt-6 text-xl font-semibold text-cdb-purple-deep">Participe do Acessuas Trabalho</h3>
+          <p class="mt-3 leading-relaxed text-cdb-muted">Preparação gratuita para o mundo do trabalho, para jovens, adultos e imigrantes de 14 a 64 anos.</p>
+          <div class="mt-5 flex flex-wrap items-center gap-4">
+            <a href="https://forms.gle/MVgqLMZEqmCdCy6GA" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-5 font-semibold text-white hover:bg-cdb-purple-deep">Fazer pré-inscrição</a>
+            <a href="/portfolio/convites/acessuas.jpeg" target="_blank" rel="noreferrer" class="inline-flex min-h-11 items-center font-semibold text-cdb-purple underline underline-offset-4">Ampliar cartaz<span class="sr-only"> do Acessuas Trabalho</span></a>
+          </div>
+        </div>
       </div>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="sm:col-span-2 overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
+    </div>
+  </section>
+
+  <section id="jiu-jitsu" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="jiu-jitsu-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Oficina de jiu-jitsu</p>
+        <h2 id="jiu-jitsu-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          No tatame, aprendizados<br class="hidden lg:block" /> para a vida.
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          A cada encontro, crianças e adolescentes aprendem sobre disciplina e respeito,
+          criam amizades e fortalecem seus vínculos por meio do esporte.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Nossa oficina gratuita acontece no Guajuviras, em Canoas/RS, em um espaço de
+          convivência que incentiva a inclusão e o desenvolvimento de cada participante.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <span class="rounded-full bg-cdb-yellow-soft px-4 py-2 text-sm font-semibold text-cdb-purple-deep">40 vagas disponíveis</span>
+          <span class="text-sm font-medium text-cdb-purple">Oficina gratuita</span>
+        </div>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          Com o patrocínio de <strong class="font-semibold text-cdb-purple-deep">Supermercados Viezzer</strong>
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <figure class="col-span-2 overflow-hidden rounded-3xl bg-white">
           <img
             src="/portfolio/jiu-jitsu/aula.jpg"
             alt="Turma de jiu-jitsu do Caminho do Bem Guajuviras com faixa Pró Esporte"
-            class="h-full w-full object-cover"
+            class="aspect-[3/2] w-full object-cover"
+            loading="lazy"
           />
-        </li>
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img
-            src="/portfolio/jiu-jitsu/kimonos.jpg"
-            alt="Crianças e instrutores no tatame durante a oficina de jiu-jitsu"
-            class="aspect-[4/3] h-full w-full object-cover"
-          />
-        </li>
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img
-            src="/portfolio/jiu-jitsu/grupo.jpg"
-            alt="Costas dos kimonos com Caminho do Bem Guajuviras e patrocínio Viezzer"
-            class="aspect-[4/3] h-full w-full object-cover"
-          />
-        </li>
-      </ul>
+          <figcaption class="px-5 py-3 text-sm text-cdb-muted">Convivência e aprendizado no tatame do Guajuviras.</figcaption>
+        </figure>
+        <img
+          src="/portfolio/jiu-jitsu/kimonos.jpg"
+          alt="Crianças e instrutores no tatame durante a oficina de jiu-jitsu"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+          loading="lazy"
+        />
+        <img
+          src="/portfolio/jiu-jitsu/grupo.jpg"
+          alt="Costas dos kimonos com Caminho do Bem Guajuviras e patrocínio Viezzer"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
 
   <section id="jiu-jitsu-sbt" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Esporte — aulas de jiu-jitsu
+    <h2 class="text-center font-display text-2xl font-semibold leading-tight text-cdb-purple-deep md:text-3xl">
+      Reportagem: jiu-jitsu no Fala Comunidade SBT
     </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-3">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
+    <div class="mx-auto mt-8 grid max-w-[800px] grid-cols-2 gap-4 sm:gap-6">
+      <figure>
         <img
           src="/portfolio/jiu-jitsu/medalha.jpg"
-          alt="Equipe da reportagem do SBT na sede durante a aula de jiu-jitsu"
-          class="aspect-[3/4] w-full object-cover"
+          alt="Equipe do SBT gravando uma entrevista no tatame do Caminho do Bem"
+          class="mx-auto aspect-[4/3] w-full rounded-2xl object-cover object-center"
+          loading="lazy"
         />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
+        <figcaption class="mt-3 text-center text-sm leading-relaxed text-cdb-muted">A oficina pelos olhos do Fala Comunidade.</figcaption>
+      </figure>
+      <figure>
         <img
           src="/portfolio/jiu-jitsu/fachada.jpg"
-          alt="Participante com medalha durante a gravação da reportagem"
-          class="aspect-[3/4] w-full object-cover"
+          alt="Participante de quimono azul com medalhas durante a gravação da reportagem"
+          class="mx-auto aspect-[4/3] w-full rounded-2xl object-cover object-center"
+          loading="lazy"
         />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
+        <figcaption class="mt-3 text-center text-sm leading-relaxed text-cdb-muted">Os participantes também contam sua história.</figcaption>
+      </figure>
+      <figure class="col-span-2 mx-auto w-[calc((100%_-_1rem)/2)] sm:w-[calc((100%_-_1.5rem)/2)]">
         <img
           src="/portfolio/jiu-jitsu/sbt.jpg"
-          alt="Grupo na fachada da sede do Caminho do Bem com a equipe do SBT"
-          class="aspect-[3/4] w-full object-cover"
+          alt="Participantes e equipe da reportagem reunidos em frente à sede do Caminho do Bem"
+          class="mx-auto aspect-[4/3] w-full rounded-2xl object-cover object-[center_65%]"
+          loading="lazy"
         />
-      </li>
-    </ul>
-    <p class="mt-8 text-center font-display text-2xl text-cdb-purple-deep">Reportagem Fala Comunidade SBT</p>
+        <figcaption class="mt-3 text-center text-sm leading-relaxed text-cdb-muted">Um registro desse encontro na nossa sede.</figcaption>
+      </figure>
+    </div>
     <p class="mt-4 flex justify-center">
       <a
-        class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-cdb-purple text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cdb-purple"
+        class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-cdb-purple px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cdb-purple"
         href={sbtReel}
-        aria-label="Ver reportagem Fala Comunidade no Instagram"
+        aria-label="Ver reportagem de jiu-jitsu do Fala Comunidade SBT no Instagram"
         rel="noreferrer"
         target="_blank"
       >
@@ -202,443 +292,583 @@ const sbtReel =
             d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 7.92A3.12 3.12 0 1 1 12 8.88a3.12 3.12 0 0 1 0 6.24ZM17.58 6.98a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0ZM21.6 12c0-2.58-.02-2.9-.1-3.92-.2-2.7-1.88-4.38-4.58-4.58C15.9 3.42 15.58 3.4 12 3.4s-3.9.02-4.92.1c-2.7.2-4.38 1.88-4.58 4.58C2.42 9.1 2.4 9.42 2.4 12s.02 2.9.1 3.92c.2 2.7 1.88 4.38 4.58 4.58 1.02.08 1.34.1 4.92.1s3.9-.02 4.92-.1c2.7-.2 4.38-1.88 4.58-4.58.08-1.02.1-1.34.1-3.92Zm-1.68 4.02a3.6 3.6 0 0 1-2.03 2.03c-.53.21-1.13.32-3.37.4-2.28.1-2.96.1-4.12.1s-1.84 0-4.12-.1c-2.24-.08-2.84-.19-3.37-.4a3.6 3.6 0 0 1-2.03-2.03c-.21-.53-.32-1.13-.4-3.37-.1-2.28-.1-2.96-.1-4.12s0-1.84.1-4.12c.08-2.24.19-2.84.4-3.37A3.6 3.6 0 0 1 6.91 4.7c.53-.21 1.13-.32 3.37-.4C12.56 4.2 13.24 4.2 14.4 4.2s1.84 0 4.12.1c2.24.08 2.84.19 3.37.4a3.6 3.6 0 0 1 2.03 2.03c.21.53.32 1.13.4 3.37.1 2.28.1 2.96.1 4.12s0 1.84-.1 4.12c-.08 2.24-.19 2.84-.4 3.37Z"
           ></path>
         </svg>
+        <span>Assistir à reportagem</span>
       </a>
     </p>
   </section>
 
-  <section id="nacao-esporte" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Nação Esporte vôlei que transforma
-      </h2>
-      <div class="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <p class="text-lg leading-relaxed text-cdb-ink">
-          Oficinas gratuitas de vôlei para adolescentes e jovens, promovendo convivência, inclusão social,
-          trabalho em equipe e fortalecimento de vínculos.
-        </p>
-        <ul class="grid gap-4 sm:grid-cols-2">
-          <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-            <img
-              src="/portfolio/volei/quadra.jpg"
-              alt="Oficina de vôlei ao ar livre no Guajuviras"
-              class="aspect-[4/3] w-full object-cover"
-            />
-          </li>
-          <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-            <img
-              src="/portfolio/volei/ginasio.jpg"
-              alt="Jogo de vôlei no ginásio durante a oficina Nação Esporte"
-              class="aspect-[4/3] w-full object-cover"
-            />
-          </li>
-        </ul>
-      </div>
-      <p class="mt-8 font-semibold text-cdb-purple-deep">
-        Guajuviras, Canoas/RS | 30 vagas | Atividades desde 2022
-      </p>
-    </div>
-  </section>
-
-  <section id="nacao-cultura" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Nação Cultura<br />Teatro, expressão e cidadania
-    </h2>
-    <div class="mt-10 grid items-center gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-      <p class="text-lg leading-relaxed text-cdb-ink">
-        Oficinas e apresentações teatrais com adolescentes e jovens, abordando bullying, prevenção da violência
-        e valorização da vida.
-      </p>
-      <img
-        src="/portfolio/nacao-cultura/palco.jpg"
-        alt="Grupo de teatro Nação Cultura em apresentação no palco, camisetas amarelas"
-        class="w-full rounded-[1.4rem] border border-cdb-purple-soft object-cover"
-      />
-    </div>
-    <p class="mt-8 font-semibold text-cdb-purple-deep">Canoas e Bagé/RS | Atividades desde 2022.</p>
-  </section>
-
-  <section id="npa" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        NPA — Nação Pré Adolescente
-      </h2>
-      <div class="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <div>
-          <p class="text-lg leading-relaxed text-cdb-ink">
-            Atividades socioeducativas e recreativas para crianças de 7 a 12 anos, com café solidário, promovendo
-            convivência, criatividade e fortalecimento de vínculos.
-          </p>
-          <p class="mt-6 font-semibold text-cdb-purple-deep">Guajuviras, Canoas/RS e Bagé/RS</p>
-          <p class="mt-1 font-semibold text-cdb-purple-deep">Encontros semanais</p>
-        </div>
-        <div class="grid gap-3 sm:grid-cols-2">
-          <img
-            src="/portfolio/npa/chef.jpg"
-            alt="Mini Chef NPA: crianças no café solidário"
-            class="w-full rounded-[1.4rem] object-cover"
-          />
-          <img
-            src="/portfolio/npa/cozinha.jpg"
-            alt="Oficina de culinária do NPA com aventais e toucas"
-            class="w-full rounded-[1.4rem] object-cover"
-          />
-          <img
-            src="/portfolio/npa/grupo.jpg"
-            alt="Grupo de crianças do NPA em encontro na sede"
-            class="w-full rounded-[1.4rem] object-cover sm:col-span-2"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="populacao-migrante" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Atendimento e apoio à população migrante
-    </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-3">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/migrante/atendimento.jpg"
-          alt="Roda de conversa com famílias migrantes"
-          class="aspect-[4/3] w-full object-cover"
-        />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/migrante/mutirao.jpg"
-          alt="Mutirão de apoio documental com a OIM"
-          class="aspect-[4/3] w-full object-cover"
-        />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/migrante/roda.jpg"
-          alt="Atendimento individual de orientação documental"
-          class="aspect-[4/3] w-full object-cover"
-        />
-      </li>
-    </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-      Rodas de conversa, palestras, mutirões e apoio documental, promovendo acolhimento, integração social e
-      acesso a direitos.
-    </p>
-    <p class="mt-4 text-center font-semibold text-cdb-purple-deep">
-      Canoas/RS | Atendimento contínuo | Média de 30 pessoas por mês.
-    </p>
-  </section>
-
-  <section id="limpeza-agil" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Limpeza Ágil qualificação profissional
-      </h2>
-      <div class="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-        <p class="text-lg leading-relaxed text-cdb-ink">
-          Curso gratuito de qualificação na área da limpeza, promovendo autonomia, geração de renda e
-          oportunidades de trabalho.
-        </p>
-        <div class="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-          <img
-            src="/portfolio/limpeza-agil/extra-3.jpg"
-            alt="Turma da Limpeza Ágil em aula teórica"
-            class="w-full rounded-[1.4rem] object-cover sm:col-span-1 sm:row-span-1"
-          />
-          <img
-            src="/portfolio/limpeza-agil/aula.jpg"
-            alt="Cartaz Treinamento para uma Limpeza Ágil"
-            class="w-full rounded-[1.4rem] object-cover sm:row-span-2"
-          />
-          <div class="grid grid-cols-2 gap-3 sm:col-start-1">
-            <img
-              src="/portfolio/limpeza-agil/turma.jpg"
-              alt="Instrutora demonstra técnica de limpeza na oficina"
-              class="h-full w-full rounded-[1.4rem] object-cover"
-            />
-            <img
-              src="/portfolio/limpeza-agil/cartaz.jpg"
-              alt="Participantes da Limpeza Ágil assistindo à aula"
-              class="h-full w-full rounded-[1.4rem] object-cover"
-            />
-          </div>
-        </div>
-      </div>
-      <p class="mt-8 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-        Canoas: iniciativa patrocinada | Bagé: recursos próprios | 25 participantes por turma.
-      </p>
-    </div>
-  </section>
-
-  <section id="oficina-digital-guajuviras" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Oficina Digital Guajuviras
-    </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-3">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/digital/img-00.jpg"
-          alt="Cartaz Oficina Digita Guaju"
-          class="aspect-[3/4] w-full object-cover"
-        />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/digital/img-01.jpg"
-          alt="Participantes da oficina digital na sede do Guajuviras"
-          class="aspect-[3/4] w-full object-cover"
-        />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img
-          src="/portfolio/digital/img-02.jpg"
-          alt="Aula da oficina digital Guajuviras com projeção Sejam bem-vindos"
-          class="aspect-[3/4] w-full object-cover"
-        />
-      </li>
-    </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-      Capacitação prática para ampliar a autonomia no uso de ferramentas digitais e o acesso a oportunidades.
-    </p>
-    <p class="mt-4 text-center font-semibold uppercase tracking-wide text-cdb-purple-deep">
-      Projeto executado em Canoas/RS
-    </p>
-  </section>
-
-  <section id="oficina-digital-mathias" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Oficina Digital Mathias Velho
-      </h2>
-      <div class="mt-10 grid items-center gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,0.7fr)_minmax(0,1fr)]">
-        <p class="text-lg leading-relaxed text-cdb-ink">
-          Capacitação em ferramentas digitais, design gráfico, Canva e edição de vídeos, ampliando oportunidades
-          e fortalecendo a inclusão digital.
-        </p>
-        <img
-          src="/portfolio/digital/img-03.jpg"
-          alt="Cartaz Oficina Recomeço Mathias"
-          class="w-full rounded-[1.4rem] object-cover"
-        />
-        <img
-          src="/portfolio/digital/img-04.jpg"
-          alt="Turma da oficina digital no Mathias Velho usando o celular"
-          class="w-full rounded-[1.4rem] object-cover"
-        />
-      </div>
-      <p class="mt-8 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-        Oficina executada no bairro Mathias Velho — Canoas/RS
-      </p>
-    </div>
-  </section>
-
-  <section id="acessuas-jovens" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Acessuas Trabalho jovens
-    </h2>
-    <div class="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+  <section id="judo" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="judo-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
       <div>
-        <p class="text-lg leading-relaxed text-cdb-ink">
-          Oficinas de preparação para o primeiro emprego, abordando direitos trabalhistas, elaboração de
-          currículos, entrevistas e inclusão digital.
-        </p>
-        <p class="mt-6 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-          Parceria: Secretaria de Assistência Social e Canoas
-        </p>
-        <p class="mt-1 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-          Termo de Fomento nº 005/2026
+        <h2 id="judo-titulo" class="font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Oficina de judô
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Com o apoio de novos parceiros, podemos ampliar o número de vagas e levar nossas atividades
+          a ainda mais crianças e jovens.
         </p>
       </div>
-      <div class="grid gap-3 sm:grid-cols-[1fr_0.7fr]">
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
         <img
-          src="/portfolio/acessuas/img-01.jpg"
-          alt="Turma do Acessuas Trabalho Jovens com materiais do projeto"
-          class="w-full rounded-[1.4rem] object-cover"
+          src="/portfolio/judo/aula.png"
+          alt="Instrutor de judô orientando participantes no tatame do espaço do Restaurante Popular"
+          width="465"
+          height="249"
+          class="w-full rounded-2xl"
+          loading="lazy"
         />
+        <img
+          src="/portfolio/judo/turma.png"
+          alt="Turma reunida durante a aula de judô no espaço do Restaurante Popular"
+          width="465"
+          height="249"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+        <p class="col-span-2 text-base leading-[1.75] text-cdb-muted">
+          As aulas de judô acontecem no espaço do Restaurante Popular, onde o Projeto Social
+          Caminho do Bem desenvolve e executa ações sociais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nacao-esporte" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="volei-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Nação Esporte</p>
+        <h2 id="volei-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Oficina de vôlei
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          No vôlei, cada jogada é uma oportunidade de aprender em equipe. Nossas oficinas gratuitas
+          reúnem adolescentes e jovens para praticar esporte, criar vínculos e compartilhar experiências.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Desde 2022, a atividade acontece no Guajuviras, em Canoas/RS, incentivando a convivência,
+          a inclusão social e o trabalho em equipe.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <span class="rounded-full bg-cdb-yellow-soft px-4 py-2 text-sm font-semibold text-cdb-purple-deep">30 vagas</span>
+          <span class="text-sm font-medium text-cdb-purple">Oficina gratuita</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <img
+          src="/portfolio/volei/quadra.jpg"
+          alt="Oficina de vôlei ao ar livre no Guajuviras"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+          loading="lazy"
+        />
+        <img
+          src="/portfolio/volei/ginasio.jpg"
+          alt="Jogo de vôlei no ginásio durante a oficina Nação Esporte"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="nacao-cultura" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="teatro-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Nação Cultura</p>
+        <h2 id="teatro-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Oficina de teatro
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Entre ensaios e apresentações, adolescentes e jovens encontram no teatro um espaço
+          para se expressar, compartilhar histórias e construir vínculos.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          As oficinas abordam temas como bullying, prevenção da violência e valorização da vida,
+          aproximando arte e cidadania em cada encontro.
+        </p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          Desde 2022, em <strong class="font-semibold text-cdb-purple-deep">Canoas e Bagé/RS</strong>.
+        </p>
+      </div>
+      <figure class="overflow-hidden rounded-3xl bg-white">
+        <img
+          src="/portfolio/nacao-cultura/palco.jpg"
+          alt="Grupo de teatro Nação Cultura em apresentação no palco, camisetas amarelas"
+          class="w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption class="px-5 py-3 text-sm leading-relaxed text-cdb-muted">
+          Expressão e convivência no palco com o Nação Cultura.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="npa" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="npa-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">NPA</p>
+        <h2 id="npa-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Nação Pré Adolescente
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Brincar, criar e aprender juntos. O NPA reúne crianças de 7 a 12 anos em atividades
+          socioeducativas e recreativas que estimulam a criatividade e fortalecem vínculos.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Com encontros semanais e café solidário, cada atividade é uma oportunidade de
+          compartilhar experiências e cultivar a convivência.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full bg-cdb-yellow-soft px-4 py-2 text-sm font-semibold text-cdb-purple-deep">7 a 12 anos</span>
+          <span class="rounded-full bg-cdb-purple-soft px-4 py-2 text-sm font-medium text-cdb-purple">Encontros semanais</span>
+        </div>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          No <strong class="font-semibold text-cdb-purple-deep">Guajuviras, em Canoas/RS, e em Bagé/RS</strong>.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="grid gap-3 sm:gap-4">
+        <img
+          src="/portfolio/npa/chef.jpg"
+          alt="Mini Chef NPA: crianças no café solidário"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+        <img
+          src="/portfolio/npa/grupo.jpg"
+          alt="Grupo de crianças do NPA em encontro na sede"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+        </div>
+        <img
+          src="/portfolio/npa/cozinha.jpg"
+          alt="Oficina de culinária do NPA com aventais e toucas"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+
+      </div>
+    </div>
+    <div class="mx-auto mt-10 grid max-w-[1120px] items-center gap-8 border-t border-cdb-purple-soft px-6 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <h3 class="text-2xl font-semibold leading-tight text-cdb-purple-deep">Uma atividade do NPA</h3>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Veja um dos encontros do Nação Pré Adolescente neste registro em vídeo.</p>
+        <a href="https://www.instagram.com/reels/Db3N-feurZZ/" target="_blank" rel="noreferrer" class="mt-6 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white transition-colors hover:bg-cdb-purple-deep">Assistir à atividade no Instagram</a>
+      </div>
+      <div class="mx-auto w-full max-w-[400px]">
+        <iframe src="https://www.instagram.com/reel/Db3N-feurZZ/embed/" title="Vídeo de uma atividade do Nação Pré Adolescente" class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p class="mt-3 text-sm leading-relaxed text-cdb-muted">Se o vídeo não carregar, use o botão para assistir no Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dia-das-criancas-2025" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="dia-criancas-titulo">
+    <div class="mx-auto max-w-[1120px] px-6">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Momentos da nossa caminhada</p>
+        <h2 id="dia-criancas-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Dia das Crianças 2025</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Confira os registros do Dia das Crianças de 2025 no Caminho do Bem.</p>
+      </div>
+      <div class="mx-auto mt-8 grid max-w-[840px] gap-6 md:grid-cols-2">
+      <div class="mx-auto w-full max-w-[400px]">
+        <iframe
+          src="https://www.instagram.com/reel/DQCt5KSDrsn/embed/"
+          title="Vídeo do Dia das Crianças 2025 no Instagram do Caminho do Bem"
+          class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white"
+          loading="lazy"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <a href="https://www.instagram.com/reel/DQCt5KSDrsn/" target="_blank" rel="noreferrer" class="mt-4 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white hover:bg-cdb-purple-deep">Assistir no Instagram</a>
+      </div>
+        <div class="mx-auto w-full max-w-[400px]">
+          <iframe src="https://www.instagram.com/p/DP-E7jCDrW3/embed/" title="Outro registro do Dia das Crianças 2025 no Instagram" class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          <a href="https://www.instagram.com/p/DP-E7jCDrW3/" target="_blank" rel="noreferrer" class="mt-4 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white hover:bg-cdb-purple-deep">Ver publicação no Instagram</a>
+        </div>
+      </div>
+      <p class="mt-5 text-sm text-cdb-muted">Se os registros não carregarem, use os botões para abrir no Instagram.</p>
+    </div>
+  </section>
+
+  <section id="juventude-na-mesa" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="juventude-mesa-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Momentos da nossa caminhada</p>
+        <h2 id="juventude-mesa-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Juventude na Mesa</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Conheça o Juventude na Mesa neste registro em vídeo.</p>
+        <a href="https://www.instagram.com/reels/Dd2ZKPLtcCh/" target="_blank" rel="noreferrer" class="mt-7 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white transition-colors hover:bg-cdb-purple-deep">Assistir no Instagram</a>
+      </div>
+      <div class="mx-auto w-full max-w-[400px]">
+        <iframe src="https://www.instagram.com/reel/Dd2ZKPLtcCh/embed/" title="Vídeo Juventude na Mesa no Instagram" class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p class="mt-3 text-sm leading-relaxed text-cdb-muted">Se o vídeo não carregar, use o botão para assistir no Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="acessuas-jovens" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="acessuas-jovens-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Preparação para o primeiro emprego</p>
+        <h2 id="acessuas-jovens-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Acessuas Trabalho Jovens
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Dar os primeiros passos no mundo do trabalho fica mais fácil com orientação e apoio.
+          Nas oficinas, os jovens se preparam para o primeiro emprego e conhecem seus direitos.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Elaboração de currículos, preparação para entrevistas, direitos trabalhistas e inclusão
+          digital fazem parte dos encontros, aproximando os participantes de novas oportunidades.
+        </p>
+        <div class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          <p>Em parceria com a <strong class="font-semibold text-cdb-purple-deep">Secretaria de Assistência Social de Canoas</strong>.</p>
+          <p class="mt-2">Termo de Fomento nº 005/2026</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="grid gap-3 sm:gap-4">
+          <img
+            src="/portfolio/acessuas/img-01.jpg"
+            alt="Turma do Acessuas Trabalho Jovens com materiais do projeto"
+            class="w-full rounded-2xl"
+            loading="lazy"
+          />
+          <img
+            src="/portfolio/acessuas/img-02.jpg"
+            alt="Participantes assistindo à oficina Acessuas Trabalho Jovens"
+            class="w-full rounded-2xl"
+            loading="lazy"
+          />
+        </div>
         <img
           src="/portfolio/acessuas/img-00.jpg"
           alt="Facilitador em aula do Acessuas Trabalho Jovens"
-          class="w-full rounded-[1.4rem] object-cover sm:row-span-2"
-        />
-        <img
-          src="/portfolio/acessuas/img-02.jpg"
-          alt="Participantes assistindo à oficina Acessuas Trabalho Jovens"
-          class="w-full rounded-[1.4rem] object-cover"
+          class="w-full rounded-2xl"
+          loading="lazy"
         />
       </div>
     </div>
   </section>
 
-  <section id="acessuas-adultos" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Acessuas Trabalho adultos
-      </h2>
-      <div class="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <div>
-          <p class="text-lg leading-relaxed text-cdb-ink">
-            Oficinas para recolocação profissional, com orientações sobre currículo, entrevistas, direitos
-            trabalhistas e inclusão digital.
-          </p>
-          <p class="mt-6 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-            Parceria: Secretaria de Assistência Social de Canoas
-          </p>
-          <p class="mt-1 font-semibold uppercase tracking-wide text-cdb-purple-deep">
-            Termo de Fomento nº 005/2026
-          </p>
+  <section id="acessuas-adultos" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="acessuas-adultos-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Recolocação profissional</p>
+        <h2 id="acessuas-adultos-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Acessuas Trabalho Adultos
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Retomar o caminho profissional pode trazer dúvidas e novos desafios. Nas oficinas,
+          os participantes encontram orientação e apoio para buscar uma nova oportunidade de trabalho.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Os encontros abordam elaboração de currículos, preparação para entrevistas, direitos
+          trabalhistas e inclusão digital, com espaço para trocar experiências e aprender juntos.
+        </p>
+        <div class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          <p>Em parceria com a <strong class="font-semibold text-cdb-purple-deep">Secretaria de Assistência Social de Canoas</strong>.</p>
+          <p class="mt-2">Termo de Fomento nº 005/2026</p>
         </div>
-        <div class="grid gap-3 sm:grid-cols-[1fr_0.9fr]">
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="grid gap-3 sm:gap-4">
           <img
             src="/portfolio/acessuas/img-03.jpg"
             alt="Grupo do Acessuas Trabalho Adultos com o banner do projeto"
-            class="w-full rounded-[1.4rem] object-cover"
-          />
-          <img
-            src="/portfolio/acessuas/img-04.jpg"
-            alt="Roda de conversa da oficina Acessuas Trabalho Adultos"
-            class="w-full rounded-[1.4rem] object-cover sm:row-span-2"
+            class="w-full rounded-2xl"
+            loading="lazy"
           />
           <img
             src="/portfolio/acessuas/img-05.jpg"
             alt="Encontro de recolocação profissional do Acessuas Trabalho Adultos"
-            class="w-full rounded-[1.4rem] object-cover"
+            class="w-full rounded-2xl"
+            loading="lazy"
           />
+        </div>
+        <img
+          src="/portfolio/acessuas/img-04.jpg"
+          alt="Roda de conversa da oficina Acessuas Trabalho Adultos"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="formatura-acessuas" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="formatura-acessuas-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Acessuas Trabalho</p>
+        <h2 id="formatura-acessuas-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Formatura de jovens e adultos</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Um momento para celebrar o aprendizado e a caminhada dos participantes. Confira o registro da formatura das turmas de jovens e adultos do Acessuas Trabalho.</p>
+        <a href="https://www.instagram.com/reels/DcuVDJjNX8Z/" target="_blank" rel="noreferrer" class="mt-7 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white transition-colors hover:bg-cdb-purple-deep">Assistir à formatura no Instagram</a>
+      </div>
+      <div class="mx-auto w-full max-w-[400px]">
+        <iframe src="https://www.instagram.com/reel/DcuVDJjNX8Z/embed/" title="Vídeo da formatura do Acessuas Trabalho Jovens e Adultos" class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p class="mt-3 text-sm leading-relaxed text-cdb-muted">Se o vídeo não carregar, use o botão para assistir no Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="populacao-migrante" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="migrante-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Acolhimento e acesso a direitos</p>
+        <h2 id="migrante-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Apoio à população migrante
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Acolher também é ajudar a encontrar caminhos. Em Canoas, oferecemos apoio à população
+          migrante para fortalecer a integração social e ampliar o acesso a direitos.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          Rodas de conversa, palestras, mutirões e orientação documental criam espaços de escuta,
+          troca de experiências e apoio às pessoas e famílias atendidas.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full bg-cdb-yellow-soft px-4 py-2 text-sm font-semibold text-cdb-purple-deep">Atendimento contínuo</span>
+          <span class="rounded-full bg-cdb-purple-soft px-4 py-2 text-sm font-medium text-cdb-purple">Canoas/RS</span>
+        </div>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          Média de <strong class="font-semibold text-cdb-purple-deep">30 pessoas atendidas por mês</strong>.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="grid gap-3 sm:gap-4">
+          <img
+            src="/portfolio/migrante/atendimento.jpg"
+            alt="Roda de conversa com famílias migrantes"
+            class="w-full rounded-2xl"
+            loading="lazy"
+          />
+          <img
+            src="/portfolio/migrante/roda.jpg"
+            alt="Atendimento individual de orientação documental"
+            class="w-full rounded-2xl"
+            loading="lazy"
+          />
+        </div>
+        <img
+          src="/portfolio/migrante/mutirao.jpg"
+          alt="Mutirão de apoio documental com a OIM"
+          class="w-full rounded-2xl"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="limpeza-agil" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="limpeza-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Qualificação profissional</p>
+        <h2 id="limpeza-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">
+          Limpeza Ágil
+        </h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">
+          Aprender um ofício abre caminhos para novas oportunidades. O Limpeza Ágil oferece
+          qualificação gratuita na área da limpeza, incentivando a autonomia e a geração de renda.
+        </p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">
+          A formação reúne aprendizado teórico e prático para apoiar os participantes
+          na construção de novas possibilidades de trabalho.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <span class="rounded-full bg-cdb-yellow-soft px-4 py-2 text-sm font-semibold text-cdb-purple-deep">25 participantes por turma</span>
+          <span class="text-sm font-medium text-cdb-purple">Curso gratuito</span>
+        </div>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">
+          Em <strong class="font-semibold text-cdb-purple-deep">Canoas</strong>, a iniciativa conta com patrocínio.
+          Em <strong class="font-semibold text-cdb-purple-deep">Bagé</strong>, acontece com recursos próprios.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="grid gap-3 sm:gap-4">
+          <img src="/portfolio/limpeza-agil/extra-3.jpg" alt="Turma da Limpeza Ágil em aula teórica" class="w-full rounded-2xl" loading="lazy" />
+          <img src="/portfolio/limpeza-agil/turma.jpg" alt="Instrutora demonstra técnica de limpeza na oficina" class="w-full rounded-2xl" loading="lazy" />
+        </div>
+        <div class="grid gap-3 sm:gap-4">
+          <img src="/portfolio/limpeza-agil/aula.jpg" alt="Cartaz Treinamento para uma Limpeza Ágil" class="w-full rounded-2xl" loading="lazy" />
+        </div>
+        <img src="/portfolio/limpeza-agil/cartaz.jpg" alt="Participantes da Limpeza Ágil assistindo à aula" class="col-span-2 mx-auto w-[calc((100%_-_1rem)/2)] rounded-2xl sm:w-[calc((100%_-_1.5rem)/2)]" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="oficina-digital-guajuviras" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="oficina-digital-guajuviras-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Inclusão digital</p>
+        <h2 id="oficina-digital-guajuviras-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Oficina Digital Guajuviras</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Aprender a usar ferramentas digitais traz mais autonomia para o dia a dia e abre novas possibilidades. No Guajuviras, a oficina oferece capacitação prática para aproximar os participantes da tecnologia.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Os encontros fortalecem a inclusão digital e o acesso a oportunidades, com espaço para aprender e desenvolver novas habilidades.</p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">Na sede do Guajuviras, em Canoas/RS.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/digital/img-00.jpg" alt="Cartaz da Oficina Digital Guajuviras" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/digital/img-01.jpg" alt="Participantes da oficina digital na sede do Guajuviras" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/digital/img-02.jpg" alt="Aula da oficina digital Guajuviras com projeção Sejam bem-vindos" class="col-span-2 mx-auto w-[calc((100%_-_1rem)/2)] rounded-2xl sm:w-[calc((100%_-_1.5rem)/2)]" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="oficina-digital-mathias" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="oficina-digital-mathias-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Inclusão digital</p>
+        <h2 id="oficina-digital-mathias-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Oficina Digital Mathias Velho</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Criar, comunicar e descobrir novas possibilidades com a tecnologia. No Mathias Velho, a oficina desenvolve habilidades digitais e amplia o acesso a oportunidades.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Ferramentas digitais, design gráfico, Canva e edição de vídeos fazem parte da capacitação, fortalecendo a inclusão digital por meio do aprendizado prático.</p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">No bairro Mathias Velho, em Canoas/RS.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/digital/img-03.jpg" alt="Cartaz Oficina Recomeço Mathias" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/digital/img-04.jpg" alt="Turma da oficina digital no Mathias Velho usando o celular" class="w-full rounded-2xl" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="bage-nacao-cultura" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="bage-nacao-cultura-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Bagé/RS</p>
+        <h2 id="bage-nacao-cultura-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Nação Cultura</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Oficinas e apresentações de teatro abrem espaço para a expressão artística e a convivência em Bagé.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Entre ensaios e cenas, os participantes compartilham experiências e fortalecem seus vínculos por meio da arte.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/bage/img-00.jpg" alt="Ensaio de teatro da Nação Cultura em Bagé" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/bage/img-01.jpg" alt="Apresentação teatral da Nação Cultura em Bagé" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/bage/img-02.jpg" alt="Participante da Nação Cultura em cena, em Bagé" class="col-span-2 mx-auto w-[calc((100%_-_1rem)/2)] rounded-2xl sm:w-[calc((100%_-_1.5rem)/2)]" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="bage-pascoa" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="bage-pascoa-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Bagé/RS</p>
+        <h2 id="bage-pascoa-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Oficina de Páscoa</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Uma oportunidade de aprender fazendo e compartilhar momentos de convivência. A oficina de Páscoa reúne os participantes em uma atividade prática.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Cada encontro aproxima pessoas, incentiva o aprendizado e fortalece os vínculos da comunidade.</p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">Em parceria com o Centro Social Urbano da Prefeitura de Bagé.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/bage/img-03.jpg" alt="Grupo da oficina de Páscoa em Bagé" class="w-full rounded-2xl" loading="lazy" />
+        <div class="grid gap-3 sm:gap-4">
+        <img src="/portfolio/bage/img-04.jpg" alt="Oficina prática de Páscoa em Bagé" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/bage/img-05.jpg" alt="Participantes da oficina de Páscoa com os produtos feitos" class="w-full rounded-2xl" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <section id="bage-nacao-cultura" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Filial Bagé/RS — Nação Cultura
-    </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-3">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-00.jpg" alt="Ensaio de teatro da Nação Cultura em Bagé" class="aspect-[3/2] w-full object-cover" />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-01.jpg" alt="Apresentação teatral da Nação Cultura em Bagé" class="aspect-[3/2] w-full object-cover" />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-02.jpg" alt="Participante da Nação Cultura em cena, em Bagé" class="aspect-[3/2] w-full object-cover" />
-      </li>
-    </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-      Oficinas e apresentações teatrais que promovem expressão artística, convivência e fortalecimento de
-      vínculos.
-    </p>
-  </section>
-
-  <section id="bage-pascoa" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Filial Bagé/RS Oficina de Páscoa
-      </h2>
-      <ul class="mt-10 grid gap-4 md:grid-cols-3">
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img src="/portfolio/bage/img-03.jpg" alt="Grupo da oficina de Páscoa em Bagé" class="aspect-[3/2] w-full object-cover" />
-        </li>
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img src="/portfolio/bage/img-04.jpg" alt="Oficina prática de Páscoa em Bagé" class="aspect-[3/2] w-full object-cover" />
-        </li>
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img src="/portfolio/bage/img-05.jpg" alt="Participantes da oficina de Páscoa com os produtos feitos" class="aspect-[3/2] w-full object-cover" />
-        </li>
-      </ul>
-      <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-        Oficina prática que promove convivência, aprendizado e fortalecimento de vínculos.
-      </p>
-      <p class="mt-4 text-center font-semibold uppercase tracking-wide text-cdb-purple-deep">
-        Parceria: Centro Social Urbano Prefeitura de Bagé
-      </p>
+  <section id="bage-nacao-esporte" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="bage-nacao-esporte-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Bagé/RS</p>
+        <h2 id="bage-nacao-esporte-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Nação Esporte</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">O esporte aproxima crianças, adolescentes e jovens em atividades que incentivam a convivência e a inclusão social.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Em Bagé, o Nação Esporte fortalece o trabalho em equipe e os vínculos entre os participantes.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <div class="relative aspect-[1080/566] overflow-hidden rounded-2xl">
+          <img src="/portfolio/bage/img-06.jpg" alt="Turma da Nação Esporte reunida na quadra em Bagé" class="absolute left-0 top-[-27.56%] w-full max-w-none" loading="lazy" />
+        </div>
+        <img src="/portfolio/bage/img-07.jpg" alt="Turma da Nação Esporte no ginásio em Bagé" class="w-full rounded-2xl" loading="lazy" />
+      </div>
     </div>
   </section>
 
-  <section id="bage-nacao-esporte" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Filial Bagé/RS Nação Esporte
-    </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-2">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-06.jpg" alt="Equipe da Nação Esporte em Bagé com o troféu" class="aspect-[4/3] w-full object-cover" />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-07.jpg" alt="Turma da Nação Esporte no ginásio em Bagé" class="aspect-[4/3] w-full object-cover" />
-      </li>
-    </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-      Atividades esportivas que incentivam a convivência, o trabalho em equipe e a inclusão social de crianças,
-      adolescentes e jovens.
-    </p>
-    <p class="mt-4 text-center font-semibold uppercase tracking-wide text-cdb-purple-deep">
-      Atividades desenvolvidas em Bagé/RS
-    </p>
-  </section>
-
-  <section id="bage-limpeza-agil" class="bg-cdb-paper py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-        Bagé/RS Limpeza Ágil Bagé/RS
-      </h2>
-      <ul class="mt-10 grid gap-4 md:grid-cols-2">
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img src="/portfolio/bage/img-08.jpg" alt="Entrega de certificado do treinamento Limpeza Ágil em Bagé" class="aspect-[4/5] w-full object-cover" />
-        </li>
-        <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-          <img src="/portfolio/bage/img-09.jpg" alt="Entrega de certificado Limpeza Ágil no núcleo CDB Bagé" class="aspect-[4/5] w-full object-cover" />
-        </li>
-      </ul>
-      <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-        Curso gratuito de qualificação profissional na área da limpeza, promovendo autonomia e geração de renda.
-      </p>
+  <section id="bage-limpeza-agil" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="bage-limpeza-agil-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Bagé/RS</p>
+        <h2 id="bage-limpeza-agil-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Limpeza Ágil</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Qualificação gratuita na área da limpeza para ampliar a autonomia e as possibilidades de geração de renda.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">Em Bagé, o curso apoia os participantes na construção de novas oportunidades de trabalho.</p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">Curso gratuito, realizado com recursos próprios.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/bage/img-08.jpg" alt="Entrega de certificado do treinamento Limpeza Ágil em Bagé" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/bage/img-09.jpg" alt="Entrega de certificado Limpeza Ágil no núcleo CDB Bagé" class="w-full rounded-2xl" loading="lazy" />
+      </div>
     </div>
   </section>
 
-  <section id="bage-baita-empreendedor" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-center font-display text-3xl uppercase tracking-wide text-cdb-purple-deep md:text-4xl">
-      Filial Bagé/RS Baita Empreendedor
-    </h2>
-    <ul class="mt-10 grid gap-4 md:grid-cols-2">
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-10.jpg" alt="Participantes do Baita Empreendedor com os painéis do curso" class="aspect-[4/3] w-full object-cover" />
-      </li>
-      <li class="overflow-hidden rounded-[1.4rem] border border-cdb-purple-soft bg-white">
-        <img src="/portfolio/bage/img-11.jpg" alt="Turma do Baita Empreendedor com os certificados" class="aspect-[4/3] w-full object-cover" />
-      </li>
-    </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-cdb-ink">
-      Apoio à realização de curso gratuito do Governo do Estado, voltado ao empreendedorismo e à geração de
-      renda.
-    </p>
+  <section id="bage-baita-empreendedor" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="bage-baita-empreendedor-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Bagé/RS</p>
+        <h2 id="bage-baita-empreendedor-titulo" class="mt-3 font-display text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Baita Empreendedor</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Apoio ao aprendizado de quem quer empreender e buscar novas possibilidades de geração de renda.</p>
+        <p class="mt-4 text-base leading-[1.75] text-cdb-muted">O Caminho do Bem apoia a realização do curso gratuito do Governo do Estado em Bagé, aproximando os participantes dessa oportunidade de formação.</p>
+        <p class="mt-6 border-t border-cdb-purple-soft pt-4 text-sm leading-relaxed text-cdb-muted">Curso gratuito do Governo do Estado.</p>
+      </div>
+      <div class="grid grid-cols-2 items-start gap-3 sm:gap-4">
+        <img src="/portfolio/bage/img-10.jpg" alt="Participantes do Baita Empreendedor com os painéis do curso" class="w-full rounded-2xl" loading="lazy" />
+        <img src="/portfolio/bage/img-11.jpg" alt="Turma do Baita Empreendedor com os certificados" class="w-full rounded-2xl" loading="lazy" />
+      </div>
+    </div>
   </section>
 
-  <section id="contatos" class="bg-cdb-purple py-16 text-white">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-center font-display text-3xl uppercase tracking-wide md:text-4xl">Redes sociais — Contatos</h2>
-      <div class="mt-10 grid gap-6 lg:grid-cols-2">
-        <div class="rounded-[1.6rem] bg-cdb-purple-deep p-8">
-          <p class="font-display text-3xl">Redes sociais:</p>
-          <div class="mt-6">
-            <SocialLinks facebookHref={brand.facebook} instagramHref={brand.instagram} tone="on-dark" />
-          </div>
+  <section id="podcast" class="scroll-mt-24 bg-cdb-paper py-12 md:py-16" aria-labelledby="podcast-titulo">
+    <div class="mx-auto grid max-w-[1120px] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Conversas e encontros</p>
+        <h2 id="podcast-titulo" class="mt-3 text-3xl font-semibold leading-tight text-cdb-purple-deep md:text-4xl">Podcast Caminho do Bem</h2>
+        <div class="mt-5 h-1 w-16 rounded-full bg-cdb-yellow" aria-hidden="true"></div>
+        <p class="mt-6 text-lg leading-relaxed text-cdb-muted">Um registro da gravação do podcast com Kanhanga, R. Moreno e Pastor Rafael, compartilhado por @kanhangaoficial.</p>
+        <a href="https://www.instagram.com/p/Dc_Yf66kZCp/?img_index=4" target="_blank" rel="noreferrer" class="mt-7 inline-flex min-h-12 items-center rounded-full bg-cdb-purple px-6 font-semibold text-white transition-colors hover:bg-cdb-purple-deep">Ver publicação no Instagram</a>
+      </div>
+      <div class="mx-auto w-full max-w-[400px]">
+        <iframe src="https://www.instagram.com/p/Dc_Yf66kZCp/embed/" title="Publicação de Kanhanga sobre o Podcast Caminho do Bem" class="h-[640px] w-full rounded-2xl border border-cdb-purple-soft bg-white" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p class="mt-3 text-sm leading-relaxed text-cdb-muted">Se a publicação não carregar, use o botão para abrir no Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatos" class="scroll-mt-24 bg-white py-12 md:py-16" aria-labelledby="contatos-titulo">
+    <div class="mx-auto max-w-[1120px] px-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cdb-purple">Vamos conversar</p>
+      <h2 id="contatos-titulo" class="mt-3 font-display text-3xl font-semibold text-cdb-purple-deep md:text-4xl">Fale com o Caminho do Bem</h2>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cdb-muted">Quer conhecer nossas atividades, participar ou apoiar o projeto? Entre em contato com nossa equipe.</p>
+      <div class="mt-8 grid items-start gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+        <div class="rounded-3xl bg-cdb-yellow-soft p-6 md:p-8">
+          <h3 class="text-xl font-semibold text-cdb-purple-deep">Acompanhe nossa caminhada</h3>
+          <p class="mt-3 leading-relaxed text-cdb-muted">Veja os encontros, as atividades e as novidades nas nossas redes sociais.</p>
+          <div class="mt-5"><SocialLinks facebookHref={brand.facebook} instagramHref={brand.instagram} /></div>
         </div>
-        <div class="rounded-[1.6rem] bg-cdb-purple-deep p-8">
-          <ul class="space-y-5">
-            {
-              brand.contacts.map((person) => (
-                <li>
-                  <p class="font-display text-xl">{person.name}</p>
-                  <p class="text-sm text-white/80">{person.role}</p>
-                  <PhoneWithWhatsApp
-                    phone={person.phone}
-                    whatsappHref={toWhatsAppHref(person.phone)}
-                    whatsappLabel={`WhatsApp de ${person.name}`}
-                    tone="on-dark"
-                  />
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        <ul class="grid gap-4 sm:grid-cols-2">
+          {
+            brand.contacts.map((person) => (
+              <li class="rounded-2xl border border-cdb-purple-soft bg-cdb-paper p-5">
+                <h3 class="text-lg font-semibold text-cdb-purple-deep">{person.name}</h3>
+                <p class="mt-1 text-sm text-cdb-muted">{person.role}</p>
+                <PhoneWithWhatsApp phone={person.phone} whatsappHref={toWhatsAppHref(person.phone)} whatsappLabel={`WhatsApp de ${person.name}`} />
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </section>

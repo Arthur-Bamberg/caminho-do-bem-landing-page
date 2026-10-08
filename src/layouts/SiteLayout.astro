@@ -1,9 +1,8 @@
 ---
 import "../styles/global.css";
 import SiteHeader from "../components/react/SiteHeader";
-import PhoneWithWhatsApp from "../components/PhoneWithWhatsApp.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-import { brand, toWhatsAppHref } from "../data/site";
+import { brand } from "../data/site";
 
 interface Props {
   title: string;
@@ -59,19 +58,7 @@ const { title, description } = Astro.props;
         </div>
         <div>
           <p class="text-sm font-bold uppercase tracking-wide text-cdb-purple">Fale com a gente</p>
-          <ul class="mt-2 space-y-2 text-sm">
-            {
-              brand.phoneDisplay.map((phone) => (
-                <li>
-                  <PhoneWithWhatsApp
-                    phone={phone}
-                    whatsappHref={toWhatsAppHref(phone)}
-                    whatsappLabel={`WhatsApp ${phone}`}
-                  />
-                </li>
-              ))
-            }
-          </ul>
+          <a href="/#contatos" class="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-cdb-purple underline-offset-4 hover:underline">Conheça os contatos da equipe</a>
           <div class="mt-4">
             <SocialLinks facebookHref={brand.facebook} instagramHref={brand.instagram} />
           </div>
